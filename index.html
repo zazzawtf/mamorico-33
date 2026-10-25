@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+ <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>MxM</title>
+
+    <link rel="icon" id="favicon" type="image/png" href="frame1.png">
+    <link rel="stylesheet"  href="cssmlove.css">
+
+</head>
+
+<script>
+const frames = ["frame1.png", "frame2.png", "frame3.png", "frame2.png"  ]
+let i = 0;
+
+setInterval(() => {
+    document.getElementById("favicon").href = frames[i];
+    i = (i + 1) % frames.length;
+}, 200);
+</script>
+
+<body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<button id="boton-musica" onclick="abrirMusica()">
+    <img src="music.jpg" alt="Music player button with a centered musical note icon on a plain, softly colored webpage background. The button opens the audio player and the overall mood is calm and welcoming.">
+</button>
+
+
+<div id="reproductor">
+
+    <h3>ℳ ˚⊹ ꒱</h3>
+
+
+    <img id="portada" src="portada1.jpg" alt="Portada">
+
+    <p id="nombre-cancion">Canción 1</p>
+
+
+    <audio id="audio"></audio>
+
+
+    <div class="controles">
+        <button onclick="anterior()">⏮</button>
+        <button onclick="pausar()">⏯</button>
+        <button onclick="siguiente()">⏭</button>
+    </div>
+
+
+    <div class="volumen">
+        <label for="control-volumen"> Volumen</label>
+
+        <input
+            id="control-volumen"
+            type="range"
+            min="0"
+            max="100"
+            value="40"
+            oninput="cambiarVolumen(this.value)"
+        >
+    </div>
+
+
+    <button class="cerrar" onclick="abrirMusica()">
+        Cerrar 
+    </button>
+
+</div>
+
+
+<script src="musica.js"></script>
+</body>
+</html>
